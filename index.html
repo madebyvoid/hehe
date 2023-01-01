@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";SameSite=None; Secure";
+            }
+              function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                  var c = ca[i];
+                  while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                  }
+                  if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                  }
+                }
+                return "";
+              }
+            // Get the cookie value if it exists
+            var cookieValue = getCookie('cookieName');
+            if (cookieValue) {
+              $('#input').val(cookieValue);
+            }
+            $('#save').click(function() {
+              var inputValue = $('#input').val();
+              setCookie('cookieName', inputValue, null);
+            });
+            $('#addtask').click(function() {
+                var inputText = $('#input').val();
+                var alertShown = false;
+                $('#input').val('');
+                $('#textfield').append('<ol>' + inputText + '</ol>');
+              });
+              $('#textfield').on('dblclick', 'ol', function() {
+                $(this).remove();
+              });
+              $('#textfield').on('click', 'ol', function() {
+                if (!alertShown) {
+                  alert('Clicking twice on the text deletes it marking it done. Be Careful');
+                  alertShown = true;
+                }
+              });
+            });
+    </script>
+    <div class="todolistcontainer">
+        <div id="textfield"></div>
+            <input id="input" class="inputTextField textBtn">
+            <button id="addtask" class="addtaskBtn textBtn">Add Task</button>
+            <button id="save" class="addtaskBtn">Save</button>    
+    </div>
+</body>
+</html>
