@@ -86,20 +86,22 @@ body{
 @keyframes moveDown {
     from{
         top: 50%;
+        font-size: 5rem;
     }
     to{
-        top: 77%;
+        top: 80%;
+        font-size: 4rem;
     }
 }
 
 @keyframes sizeUp {
     from{
         width: 100px;
-        height: 100px;
+        height: auto;
     }
     to{
         width: 300px;
-        height: 550px;
+        height: auto;
     }
 }
 
