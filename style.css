@@ -5,6 +5,7 @@ body{
 .flower{
     font-size: 5rem;
     user-select: none;
+    cursor: pointer;
 }
 
 .center{
@@ -39,6 +40,8 @@ body{
     left: 50%;
     transform: translate(-50% , -50%);
     position: absolute;
+    animation: fadeIn forwards;
+    animation-duration: 5s;
 }
 
 .ily h1{
@@ -49,4 +52,13 @@ body{
     position: absolute;
     right: 50px;
     top: 850px;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
 }
