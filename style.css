@@ -13,3 +13,40 @@ body{
     transform: translate(-50% , -50%);
     position: absolute;
 }
+
+.notebox{
+    width: 500px;
+    height: 560px;
+    background-color:maroon;
+    position: absolute;
+    top: 35%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.note{
+    font-family: Helvetica;
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 25px 25px 25px 25px;
+}
+
+.ily{
+    color: white;
+    font-family: Helvetica;
+    font-weight: Bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+}
+
+.ily h1{
+    font-size: 200px;
+}
+
+.ily h2{
+    position: absolute;
+    right: 50px;
+    top: 850px;
+}

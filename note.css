@@ -1,0 +1,111 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+.flower{
+    font-size: 5rem;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+    animation: moveDown forwards;
+    animation-duration: 2s;
+
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+}
+
+.notebox{
+    width: 100px;
+    height: 100px;
+    background-color:maroon;
+    position: absolute;
+    top: 35%;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    animation: sizeUp forwards;
+    animation-duration: 2s;
+}
+
+.note{
+    font-family: Helvetica;
+    color: white;
+    opacity: 0%;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 25px 25px 25px 25px;
+    animation: fadeIn forwards;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    user-select: none;
+}
+
+.doneButton{
+    background-color: black;
+    border-color: red;
+    border-radius: 25px 25px 25px 25px;
+    border-width: 5px;
+    color: white;
+    font-family: Helvetica;
+    font-weight: Bold;
+    width: 250px;
+    height: 45px;
+    inline-size: 150px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+    animation: button forwards;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    opacity: 0;
+}
+
+@keyframes button {
+    from{
+        opacity: 0;
+        top: 500%;
+    }
+    to{
+        opacity: 1;
+        top: 70%;
+    }
+}
+
+@keyframes moveDown {
+    from{
+        top: 50%;
+    }
+    to{
+        top: 57%;
+    }
+}
+
+@keyframes sizeUp {
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 500px;
+        height: 560px;
+    }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
