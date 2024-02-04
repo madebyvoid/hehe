@@ -45,13 +45,13 @@ body{
 }
 
 .ily h1{
-    font-size: 200px;
+    font-size: 100px;
 }
 
 .ily h2{
     position: absolute;
     right: 50px;
-    top: 850px;
+    top: 550px;
 }
 
 @keyframes fadeIn {
